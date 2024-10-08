@@ -1,0 +1,37 @@
+{
+    "case_id":"980265",
+    "customer_name":"EvolvePharma,",
+    "customer_case_description":"Project environment variables not being used. In a number of newly creatd projects, applications do not use the env vars set in Project Settings",
+    "status":"solved",
+    "comments":
+    [
+        {
+            "author":"joe_walrus@EvolvePharma.com",
+            "text":"We have many newly created projects which all no longer respect some project environment variables. These env vars are used for configuring host endpoints to external data sources and are critical to the workloads in these projects"
+        },  
+        {
+            "author":"cory_capybara@cloudera.com",
+            "text":"My name is Cory and I will be helping with your case today. If possible, can you please provide us with\n 1. The contents of your project environment variables (redacted is fine)\n 2. The contents of your workspace environment variables settings(redacted is fine)\n 3. A print of all the env vars in a user session\n\n You also mentioned that this is affecting newly created projects, does this also affect older projects?"
+        },
+        {
+            "author":"joe_walrus@EvolvePharma.com",
+            "text":"I will get you the requested information soon when the users log on.\n\nAs for older projects, this issue was reported by a new team that was recently onboarded. I will check with some of the existing teams that have been working with older and existing projects."
+        },
+        {
+            "author":"joe_walrus@EvolvePharma.com",
+            "text":"I've uploaded the information you requested with redacted contents. As you can see, the environment variables IOT_SERVICES_REPO and DC_IMLRP_GATEWAY are not set correctly in the workload session.\n\n I've also checked with the other team and they are not having problems, so this is an issue only with these newly created projects in this new team."
+        },
+        {
+            "author":"cory_capybara@cloudera.com",
+            "text":"I've checked with engineering and they think it is unlikely any internal service is modifying the ENV VARs you mentioned. Since this is a new team, can you check if these users have some of these same ENVs set in their user settings?\n\nIf they do, User ENVs take precendence. The order of precendence is Workspace ENVs, Project ENVs, User ENVs. Here is a link to the product documentation that describes this in more detail"
+        },
+        {
+            "author":"joe_walrus@EvolvePharma.com",
+            "text":"That was it! Looks like our onboarding steps for these new users indicated that these ENV vars should be set and users were setting it in their own User settings which would break any project settings we were trying to maintain. We've gotten the team to remove their misconfigured settings and now everything is working normally.\n\nOne of our admins suggested that we can set some ENV vars at the Project or Workspace level that cannot be ser by Users in their own settings. Can you rais a feature request for that?"
+        },
+        {
+            "author":"cory_capybara@cloudera.com",
+            "text":"That's great you hear that your users going working again. I will pass your feature request on to our Product teams, that sounds like a feature that could be useful."
+        }
+    ]
+}
