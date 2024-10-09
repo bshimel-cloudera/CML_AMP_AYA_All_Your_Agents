@@ -1,54 +1,96 @@
-[
+{
+  "accounts": [
     {
-      "id": "1",
-      "account_type": "Customer",
-      "industry": "Oil & Gas",
-      "account_name": "Some Gas Company",
-      "description": "The largest oil company in the world, but not really",
-      "geo": "AMER",
-      "region": "AMER",
-      "subregion": "LATAM",
-      "area": "LATAM SSA",
-      "account_team": [
+      "name": "Cloudera",
+      "industry": "technology",
+      "total_employees": 2730,
+      "employees": [],
+      "products": [],
+      "support_team": []
+    },
+    {
+      "name": "Evolve Pharma",
+      "industry": "pharmaceuticals",
+      "total_employees": 24599,
+      "employees": [
         {
-          "name": "My Guy",
-          "team_role": "Sales Engineer",
-          "email": "myguy@cloudera.com"
+          "first_name": "Joe",
+          "last_name": "Walrus",
+          "email": "joe_walrus@EvolvePharma.com",
+          "role": "Senior Vice President"
         },
         {
-          "name": "Some Dude",
-          "team_role": "Regional Vice President",
-          "email": "somedude@cloudera.com"
+          "first_name": "Pete",
+          "last_name": "Lion",
+          "email": "pete_lion@EvolvePharma.com",
+          "role": "Senior Software Engineer"
         }
       ],
-      "entitlements": [
+      "products": [
         {
-          "entitlement_name": "Some entitlement",
-          "entitlement_type": "Standard",
-          "entitlement_start_date": "2024-06-19",
-          "entitlement_end_date": "2025-06-18",
-          "status": "Active",
-          "product_type": "CDP Public Cloud",
-          "products": "CDP Public Cloud",
-          "unit_type": "Credits",
-          "unit_quantity": "5500.00"
+          "name": "Cloudera AI Inference Service",
+          "requires_gpu": true
+        },
+        {
+          "name": "Cloudera AI",
+          "requires_gpu": true
+        },
+        {
+          "name": "Cloudera Fine Tuning Studio",
+          "requires_gpu": true
         }
       ],
-      "public_cloud_cml_workspaces": [
+      "support_team": [
         {
-          "account_name": "Some Gas Company",
-          "cloud_provider": "AZURE",
-          "control_plane": "us-east-1",
-          "region": "eastus",
-          "workspace_name": "ml-dev",
-          "workspace_crn": "crn:cdp:some-workspace",
-          "workspace_version": "2.0.43-b233",
-          "support": "End of Support (EOS)",
-          "is_suspended": "False",
-          "last_consumption": "2024-09-05 06:14:04",
-          "last_upgrade_timestamp": "2024-03-06 23:16:55.414",
-          "current_status": "RENEW_FINISHED"
+          "first_name": "Cory",
+          "last_name": "Capybara",
+          "email": "cory_capybara@cloudera.com",
+          "role": "Solutions Engineer"
+        },
+        {
+          "first_name": "Audrey",
+          "last_name": "Hawk",
+          "email": "audrey_hawk@cloudera.com",
+          "role": "Senior Incident Responder"
+        },
+        {
+          "first_name": "Emma",
+          "last_name": "Giraffe",
+          "email": "emma_giraffe@cloudera.com",
+          "role": "Staff Operations Engineer"
+        }
+      ]
+    },
+    {
+      "name": "Main Street Bank",
+      "industry": "banking",
+      "total_employees": 251,
+      "employees": [
+        {
+          "first_name": "Sandra",
+          "last_name": "Turtle",
+          "email": "sandra_turle@MainStreetBank.com",
+          "role": "Senior Software Engineer"
+        }
+      ],
+      "products": [
+        {
+          "name": "Cloudera AI",
+          "requires_gpu": true
+        },
+        {
+          "name": "Cloudera Data Engineering",
+          "requires_gpu": false
+        }
+      ],
+      "support_team": [
+        {
+          "first_name": "Cory",
+          "last_name": "Capybara",
+          "email": "cory_capybara@cloudera.com",
+          "role": "Solutions Engineer"
         }
       ]
     }
   ]
+}

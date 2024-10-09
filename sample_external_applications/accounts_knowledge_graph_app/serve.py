@@ -3,11 +3,8 @@ from litellm import completion
 import os
 from langchain_community.graphs import Neo4jGraph
 
-from sample_external_applications.accounts_knowledge_graph_app.kg.neo4j_utils import (
+from sample_external_applications.accounts_knowledge_graph_app.neo4j_utils import (
     get_neo4j_credentails,
-    is_neo4j_server_up,
-    reset_neo4j_server,
-    wait_for_neo4j_server,
 )
 
 graph = Neo4jGraph(
@@ -23,7 +20,7 @@ app = FastAPI()
 @app.get("/")
 async def root(query: str):
     
-    with open("sample_external_applications/accounts_knowledge_graph_app/kg/input_prompt.txt") as fin:
+    with open("sample_external_applications/accounts_knowledge_graph_app/input_prompt.txt") as fin:
         input_prompt = str(fin.read())
         
     messages = [

@@ -2,15 +2,15 @@ import sys
 sys.path.insert(0, "/home/cdsw")
 import cmlapi
 from cmlapi import CMLServiceApi
-from sample_external_applications.accounts_knowledge_graph_app.kg.neo4j_utils import get_parent_pod_name, get_neo4j_service_name
 from sample_external_applications.accounts_knowledge_graph_app.utils import update_project_envs
 import os
 
-from sample_external_applications.accounts_knowledge_graph_app.kg.neo4j_utils import (
+from sample_external_applications.accounts_knowledge_graph_app.neo4j_utils import (
     get_neo4j_credentails,
     is_neo4j_server_up,
     reset_neo4j_server,
     wait_for_neo4j_server,
+    get_neo4j_service_name
 )
 
 def main():

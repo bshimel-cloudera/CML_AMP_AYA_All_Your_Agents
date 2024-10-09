@@ -13,7 +13,7 @@ chmod +x kubectl
 python sample_external_applications/accounts_knowledge_graph_app/start-neo4j.py
 
 # Populate the graph content.
-python sample_external_applications/accounts_knowledge_graph_app/kg/graphs.py
+python sample_external_applications/accounts_knowledge_graph_app/populate-graph.py
 
 # Forward the neo4j browser and bolt port up to application pod
 # Right now this isn't doing much of anything, since we can only expose CDSW_APP_PORT

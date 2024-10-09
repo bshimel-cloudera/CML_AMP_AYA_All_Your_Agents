@@ -1,7 +1,7 @@
 import gradio as gr
 import json
 import os
-from sample_external_applications.accounts_knowledge_graph_app.kg.client import KGClient
+from sample_external_applications.accounts_knowledge_graph_app.client import KGClient
 
 kg = KGClient()
 
