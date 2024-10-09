@@ -16,7 +16,7 @@ def create_or_update_account(graph, account):
     query = """
         MERGE (a:Account {name: $name})
         SET a.industry = $industry,
-            a.total_employees = $total_employees,
+            a.total_employees = $total_employees
     """
     params = {
         "name": account.get("name", ""),
@@ -30,7 +30,7 @@ def create_or_update_employee(graph, employee_data):
     query = """
         MERGE (e:Employee {email: $email})
         SET e.first_name = $first_name,
-            e.last_name = $last_name,
+            e.last_name = $last_name
     """
     params = {
         "email": employee_data["email"],
