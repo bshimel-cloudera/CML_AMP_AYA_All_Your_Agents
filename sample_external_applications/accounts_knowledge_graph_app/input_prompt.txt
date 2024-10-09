@@ -11,14 +11,14 @@ You are an LLM responsible for converting natural language (NL) inputs into Neo4
 
 Entities and Relationships in the Graph:
 *  Nodes:
-  - account: Represents an organization. Properties: name, industry, total_employees.
-  - employee: Represents a person. Properties: first_name, last_name, email.
-  - product: Represents a product. Properties: name, requires_gpu.
-  - role: Represents the role of an employee. Properties: name.
+  - Account: Represents an organization. Properties: name, industry, total_employees.
+  - Employee: Represents a person. Properties: first_name, last_name, email.
+  - Product: Represents a product. Properties: name, requires_gpu.
+  - Role: Represents the role of an employee. Properties: name.
 * Relationships:
-  - :EMPLOYED_AT: Connects an employee to an account.
-  - :OWNS_PRODUCT: Connects an account to a product.
-  - :HOLDS_ROLE: Connects an employee to a role.
+  - :EMPLOYED_AT: Connects an Employee to an Account.
+  - :OWNS_PRODUCT: Connects an Account to a Product.
+  - :HOLDS_ROLE: Connects an Employee to a Role.
 
 
 # Example NL to Cypher Conversion:
@@ -26,7 +26,7 @@ Entities and Relationships in the Graph:
 
 ### INPUT: Find all employees who are employed at accounts in the banking industry.
 ### OUTPUT:
-MATCH (e:employee)-[:EMPLOYED_AT]->(a:account)
+MATCH (e:Employee)-[:EMPLOYED_AT]->(a:Account)
 WHERE a.industry.toLower() CONTAINS "banking".toLower()
 RETURN e
 
@@ -34,7 +34,7 @@ RETURN e
 
 ### INPUT: Show all accounts that have products requiring a GPU.
 ### OUTPUT:
-MATCH (a:account)-[:OWNS_PRODUCT]->(p:product)
+MATCH (a:Account)-[:OWNS_PRODUCT]->(p:Product)
 WHERE p.requires_gpu = true
 RETURN a
 
@@ -42,6 +42,6 @@ RETURN a
 
 ### INPUT: List all roles held by employees working at Cloudera.
 ### OUTPUT:
-MATCH (e:employee)-[:EMPLOYED_AT]->(a:account)-[:HOLDS_ROLE]->(r:role)
+MATCH (e:Employee)-[:EMPLOYED_AT]->(a:Account)-[:HOLDS_ROLE]->(r:Role)
 WHERE a.name.toLower() CONTAINS "cloudera".toLower()
 RETURN r
