@@ -42,6 +42,6 @@ RETURN a
 
 ### INPUT: List all roles held by employees working at Cloudera.
 ### OUTPUT:
-MATCH (e:Employee)-[:EMPLOYED_AT]->(a:Account)-[:HOLDS_ROLE]->(r:Role)
+MATCH (e:Employee)-[:EMPLOYED_AT]->(a:Account), (e)-[:HOLDS_ROLE]->(r:Role)
 WHERE toLower(a.name) CONTAINS toLower("cloudera")
 RETURN r
