@@ -27,7 +27,7 @@ Entities and Relationships in the Graph:
 ### INPUT: Find all employees who are employed at accounts in the banking industry.
 ### OUTPUT:
 MATCH (e:Employee)-[:EMPLOYED_AT]->(a:Account)
-WHERE a.industry.toLower() CONTAINS "banking".toLower()
+WHERE toLower(a.industry) CONTAINS toLower("banking")
 RETURN e
 
 * Example 2:
@@ -43,5 +43,5 @@ RETURN a
 ### INPUT: List all roles held by employees working at Cloudera.
 ### OUTPUT:
 MATCH (e:Employee)-[:EMPLOYED_AT]->(a:Account)-[:HOLDS_ROLE]->(r:Role)
-WHERE a.name.toLower() CONTAINS "cloudera".toLower()
+WHERE toLower(a.name) CONTAINS toLower("cloudera")
 RETURN r
