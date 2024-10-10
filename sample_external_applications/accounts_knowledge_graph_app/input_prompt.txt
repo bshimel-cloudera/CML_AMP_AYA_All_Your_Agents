@@ -19,7 +19,7 @@ Entities and Relationships in the Graph:
   - :EMPLOYED_AT: Connects an Employee to an Account.
   - :OWNS_PRODUCT: Connects an Account to a Product.
   - :HOLDS_ROLE: Connects an Employee to a Role.
-
+  - :SUPPORT_TEAM_FOR: Connects a support team employy to an Account.
 
 # Example NL to Cypher Conversion:
 *  Example 1:
@@ -45,3 +45,11 @@ RETURN a
 MATCH (e:Employee)-[:EMPLOYED_AT]->(a:Account), (e)-[:HOLDS_ROLE]->(r:Role)
 WHERE toLower(a.name) CONTAINS toLower("cloudera")
 RETURN r
+
+* Example 4:
+
+### INPUT: Who are the key personnel on the support team for the main street bank account?
+### OUTPUT:
+MATCH (e:Employee)-[:SUPPORT_TEAM_FOR]->(a:Account)
+WHERE toLower(a.name) CONTAINS toLower("main street bank")
+RETURN e

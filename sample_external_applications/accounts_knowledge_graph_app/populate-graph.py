@@ -75,6 +75,19 @@ def create_account_employee_relationship(graph, account_name, employee_email):
     }
     graph.query(query, params=params)
 
+def create_account_support_relationship(graph, account_name, employee_email):
+    # Create relationship between Person and Account
+    query = """
+        MATCH (a:Account {name: $account_name})
+        MATCH (e:Employee {email: $email})
+        MERGE (e)-[:SUPPORT_TEAM_FOR]->(a)
+    """
+    params = {
+        "account_name": account_name,
+        "email": employee_email
+    }
+    graph.query(query, params=params)
+
 def create_or_update_product(graph, product_data):
     # Merge the Product node
     query = """
@@ -133,6 +146,7 @@ def populate_database(graph: Neo4jGraph):
             create_or_update_role(graph, person["role"])
             create_person_role_relationship(graph, person["email"], person["role"])
             create_account_employee_relationship(graph, "Cloudera", person["email"])
+            create_account_support_relationship(graph, account["name"], person["email"])
     print("Graph indexing complete!")
     return
 
