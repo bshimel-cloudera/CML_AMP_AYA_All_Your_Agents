@@ -13,7 +13,8 @@ class TicketListingTool(BaseTool):
 
       response = requests.post(TOOL_API_URL,
                       data='{"request":{"account":"%s"}}' % customer,
-                      headers={'Content-Type': 'application/json', 'Authorization': 'Bearer %s' % os.getenv('CDSW_APIV2_KEY')})
+                      headers={'Content-Type': 'application/json'})
+                      #headers={'Content-Type': 'application/json', 'Authorization': 'Bearer %s' % os.getenv('CDSW_APIV2_KEY')})
       response_dict = response.json()
       if 'success' in response_dict:
         print(response_dict)
