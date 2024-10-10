@@ -19,7 +19,7 @@ Entities and Relationships in the Graph:
   - :EMPLOYED_AT: Connects an Employee to an Account.
   - :OWNS_PRODUCT: Connects an Account to a Product.
   - :HOLDS_ROLE: Connects an Employee to a Role.
-  - :SUPPORT_TEAM_FOR: Connects a support team employy to an Account.
+  - :SUPPORT_TEAM_FOR: Connects a support team Employee to an Account.
 
 # Example NL to Cypher Conversion:
 *  Example 1:
