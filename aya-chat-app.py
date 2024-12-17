@@ -18,8 +18,8 @@ ticket_search_tool = tool_ticket_query.TicketListingTool()
 import tools.tool_customer_consumption as tool_customer_consumption
 consumption_change_tool = tool_customer_consumption.ConsumptionMetricsTool()
 
-#import tools.knowledge_graph_accounts as knowledge_graph_accounts
-#account_info_tool = knowledge_graph_accounts.ToolKnowledgeGraphSearch()
+import tools.tool_accounts_kg as knowledge_graph_accounts
+account_info_tool = knowledge_graph_accounts.ToolAccountsKnowledgeGraph()
 
 import tools.tool_case_summarizer as tool_case_summarizer
 case_summarizer_tool = tool_case_summarizer.ToolCaseSummarizer()
@@ -41,7 +41,8 @@ agent_1 = Agent(
         """)), # This is the goal that the agent is trying to achieve
     tools=[ticket_search_tool,
            case_summarizer_tool,
-           consumption_change_tool],
+           consumption_change_tool,
+           account_info_tool],
     allow_delegation=False,
     max_iter=1,
     max_retry_limit=3,
@@ -180,7 +181,7 @@ AI Summarization Agent for support case details and comments.
                                
 Looks up recent trends in Customer Consumption.
 
-##### 👤 Account Personnel Registry Agent (Coming Soon)
+##### 👤 Account Personnel Registry Agent
                                
 Knowledge graph lookup of Customer Account Team personnel.
 </div>
@@ -209,6 +210,7 @@ with gr.Blocks(css=css, theme=theme, title="A.Y.A.") as demo:
                                           [1, {"text":"Show me the weekly average consumption changes for customers"}],
                                           [2, {"text":"Show me recent incident tickets from Evolve Pharma"}],
                                           [3, {"text":"Summarize support case ID 981492 in markdown"}],
+                                          [4, {"text":"Who are the support personnel responsible for Evolve Pharma?"}]
                                       ],
                                       inputs=[example_num, input], elem_id="examples_table", label="")
         with gr.Column(scale=15, elem_id="col"):
