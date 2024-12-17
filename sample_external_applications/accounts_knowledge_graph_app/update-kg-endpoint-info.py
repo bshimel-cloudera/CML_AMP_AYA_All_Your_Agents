@@ -23,5 +23,3 @@ if __name__ == "__main__":
         "KG_APP_SERVICE_IP": kg_address,
         "KG_APP_SERVICE_PORT": kg_port
     })
-    
-    print(updated_envs)
