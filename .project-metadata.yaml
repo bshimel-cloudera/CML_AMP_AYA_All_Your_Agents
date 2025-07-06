@@ -27,7 +27,7 @@ environment_variables:
 runtimes:
   - editor: PBJ Workbench
     kernel: Python 3.10
-    edition: Standard
+    edition: All Your Agents
 
 tasks:
   - type: run_session
