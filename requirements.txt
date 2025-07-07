@@ -7,3 +7,4 @@ fastapi[standard]==0.115.0
 kubernetes==31.0.0
 neo4j==5.25.0
 uvicorn[standard]==0.31.0
+pydantic==2.9.2
